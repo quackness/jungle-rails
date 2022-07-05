@@ -12,10 +12,10 @@
 
     <p>Your card has been charged <%= humanized_money_with_symbol @order.total_cents/100 %>. </p>
     <p>Order details </p>
+    <div class="table-responsive">
     <table class="table">
       <thead>
         <tr>
-         
           <th scope="col">Name</th>
           <th scope="col">Description</th>
           <th scope="col">Image</th>
@@ -24,18 +24,17 @@
           <th scope="col">Items total</th>
         </tr>
     </thead>
+    <tbody>
     <% @order.line_items.each do |item| %>
-      <table class="table">
- 
       <%= render 'line_items', line_item: item %>
     <% end %> 
-    </p>
-    <tr>
-    <th colspan="6">Total: </th>
-   
-    <td><%= humanized_money_with_symbol @order.total_cents/100 %></th>
-    <tr>
+    <tr>  <th colspan="5">Total: </th>
+    <td><%= humanized_money_with_symbol @order.total_cents/100 %>
+    </td>
+    </tr>
+    </tbody>
   </table>
+</div>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
