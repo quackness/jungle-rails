@@ -1,8 +1,18 @@
 <h1 style="margin: 20px">Admin >> Categories</h1>
-<p>Find me in app/views/admin/categories/index.html.erb</p>
 
 <div class="well">
 <%= link_to '+ New category', [:new, :admin, :category], class: 'btn btn-info' %>
 </div>
 
-<p>ALL categories go here </p>
+
+  <h3 style="margin: 10px">Category names</h3>
+
+    <% @categories.each do |cat| %>
+
+       <ul> 
+        <li><%= cat.name%> created on:<%= cat.created_at%></li>
+     
+       </ul>
+
+    <% end %> 
+</table>
