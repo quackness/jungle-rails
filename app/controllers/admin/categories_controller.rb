@@ -2,15 +2,16 @@ class Admin::CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    pp @categories
   end
 
   def new
-    @category = Category.new(name: 'test')
+    @category = Category.new
     pp @category
   end
 
   def create
-    @category = Category.new(product_params)
+    @category = Category.new(category_params)
 
     if @category.save
       redirect_to [:admin, :categories], notice: 'Category created!'
@@ -19,6 +20,7 @@ class Admin::CategoriesController < ApplicationController
     end
   
   end
+
 
   private
 
