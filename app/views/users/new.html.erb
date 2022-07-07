@@ -1,0 +1,17 @@
+<h1 style="margin: 20px; text-align: center;">Register for the account</h1>
+<div class="row">
+  <div class="col-sm-4 mx-auto">
+
+    <%= form_for :user, url: '/users' do |f| %>
+    <div class="row">
+      Firstname: <%= f.text_field :firstname %>
+      Lastname: <%= f.text_field :lastname %>
+      Email: <%= f.text_field :email %>
+      Password: <%= f.password_field :password %>
+      Password Confirmation: <%= f.password_field :password_confirmation %>
+      <%= f.submit "Submit", class:'btn btn-success', style:'margin-top: 20px'%>
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>
