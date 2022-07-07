@@ -1,0 +1,18 @@
+<h1 style="margin: 20px">Admin >> Categories</h1>
+
+<div class="well">
+<%= link_to '+ New category', new_admin_category_path, class: 'btn btn-info' %>
+</div>
+
+
+  <h3 style="margin: 10px">Category names</h3>
+
+    <% @categories.each do |cat| %>
+
+       <ul> 
+        <li><%= cat.name%> created on: <%= cat.created_at%></li>
+     
+       </ul>
+
+    <% end %> 
+</table>
