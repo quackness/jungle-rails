@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-nav">
+<div style="margin-left: 1450px">
   <ul class="navbar-nav">
     <li>
       <% if current_user%>
@@ -14,6 +15,7 @@
       </li>
       <% end %>
   </ul>
+  </div>
 </nav>
 <header class="<%= current_page?(root_path) ? "hero" : "hero small" %>">
   <section class="title">
