@@ -1,5 +1,10 @@
 class Sale < ApplicationRecord
 
+  def self.active
+    where("sales.starts_on <= ? AND sales.end_on >= ?",
+    Date.current, Date.current)
+  end
+
   def finished?
     end_on < Date.current
   end
