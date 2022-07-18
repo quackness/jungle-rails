@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   def new
   end
 
+  pp User.find_by_email('dubajkaro@gmail.com')
+
   def create
     user = User.new(user_params)
     if user.save
