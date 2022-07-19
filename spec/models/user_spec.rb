@@ -87,11 +87,11 @@ RSpec.describe User, type: :model do
       it "should auth if cases are wrong " do
         user = User.create(:firstname => "Karolina", :lastname => "Test", :email => "email@gmail.com", :password => "testy", :password_confirmation => "testy")
         params = { email: " Email@Gmail.com", password: "testy" }
-        find_user = User.find_by(email: "email@gmail.com")
+        find_user = User.find_by_email("email@gmail.com")
         user = User.authenticate_with_credentials(params[:email], params[:password])
       expect(find_user).to eq user
       end
 
-    ends
+    end
   end
 end
